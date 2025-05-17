@@ -46,7 +46,7 @@ extraObjects:
     kind: Deployment
     metadata:
       name: "{{ .Values.extraObjectArgs.appName }}"
-      namespace: "{{ .Values.extraObjectArgs.appName }}"
+      namespace: "{{ .Values.extraObjectArgs.namespace }}"
     spec:
       # ... rest of the deployment spec
 ```
@@ -60,6 +60,7 @@ Creating a Deployment and Service:
 ```yaml
 extraObjectArgs:
   appName: example-app
+  namespace: example-namespace
 
 extraObjects:
   deployment:
@@ -67,7 +68,7 @@ extraObjects:
     kind: Deployment
     metadata:
       name: "{{ .Values.extraObjectArgs.appName }}"
-      namespace: "{{ .Values.extraObjectArgs.appName }}"
+      namespace: "{{ .Values.extraObjectArgs.namespace }}"
     spec:
       replicas: 1
       selector:
