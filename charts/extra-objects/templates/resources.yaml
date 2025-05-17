@@ -1,0 +1,4 @@
+{{ range $resource := .Values.extraObjects }}
+---
+{{ tpl (toYaml $resource) $ }}
+{{ end }}

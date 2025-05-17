@@ -1,0 +1,37 @@
+extraObjectArgs:
+  appName: example-app
+extraObjects:
+  deployment:
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: "{{ .Values.extraObjectArgs.appName }}"
+      namespace: "{{ .Values.extraObjectArgs.appName }}"
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: "{{ .Values.extraObjectArgs.appName }}"
+      template:
+        metadata:
+          labels:
+            app: "{{ .Values.extraObjectArgs.appName }}"
+        spec:
+          containers:
+            - name: "{{ .Values.extraObjectArgs.appName }}"
+              image: "{{ .Values.extraObjectArgs.appName }}:latest"
+              ports:
+                - containerPort: 80
+  service:
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: "{{ .Values.extraObjectArgs.appName }}"
+      namespace: "{{ .Values.extraObjectArgs.appName }}"
+    spec:
+      selector:
+        app: "{{ .Values.extraObjectArgs.appName }}"
+      ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 80
