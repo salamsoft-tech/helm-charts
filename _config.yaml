@@ -1,0 +1,6 @@
+title: salamsoft-tech/helm-charts
+theme: minima
+url: https://salamsoft-tech.github.io/helm-charts
+repo_name: salamsoft-tech
+sass:
+  quiet_deps: true
