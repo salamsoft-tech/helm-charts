@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  extra-objects:
+  - apiVersion: v2
+    created: "2025-05-17T04:56:36.317506178Z"
+    description: A Helm chart for Kubernetes
+    digest: f903faffb5351c864d49ff4198eebbaf2e4e349255648b512519a0183dd74844
+    name: extra-objects
+    type: application
+    urls:
+    - https://github.com/salamsoft-tech/helm-charts/releases/download/extra-objects-0.1.0/extra-objects-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-05-17T04:56:36.31751265Z"
